@@ -1,6 +1,6 @@
 import sbt._
 import Keys._
-import PlayProject._
+import play.Project._
 
 object Build extends sbt.Build
 {
@@ -9,15 +9,16 @@ object Build extends sbt.Build
 
   credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
-  val appName = "play-2.0-spring-module"
+  val appName = "play-2-1-0-spring-module"
   val appVersion = "1.1-SNAPSHOT"
 
   val appDependencies = Seq(
-          "org.springframework"    %    "spring-context"    %    "3.0.7.RELEASE",
-          "org.springframework"    %    "spring-core"       %    "3.0.7.RELEASE",
-          "org.springframework"    %    "spring-beans"      %    "3.0.7.RELEASE"
+          "org.springframework"    %    "spring-context"    %    "3.2.1.RELEASE",
+          "org.springframework"    %    "spring-core"       %    "3.2.1.RELEASE",
+          "org.springframework"    %    "spring-beans"      %    "3.2.1.RELEASE"
+	  
   )
 
-  val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(organization := "play")
+  val main = play.Project(appName, appVersion, appDependencies).settings(organization := "play")
 
 }

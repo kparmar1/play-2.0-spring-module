@@ -1,4 +1,4 @@
-name := "play-2.0-spring-module"
+name := "play-2-1-0-spring-module"
 
 organization := "play.api.modules.spring"
 
